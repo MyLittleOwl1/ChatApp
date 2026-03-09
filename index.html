@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatApp</title>
+    <title>ChatMe</title>
     <style>
         /* Variables CSS para temas claro/oscuro */
         :root {
@@ -604,11 +604,11 @@
     <div id="app">
         <div id="loadingOverlay" class="hidden">
             <div class="spinner"></div>
-            <div>Cargando ChatApp...</div>
+            <div>Cargando ChatMe...</div>
         </div>
 
         <header>
-            <h2 id="headerTitle">ChatApp</h2>
+            <h2 id="headerTitle">ChatMe</h2>
             <div class="header-buttons">
                 <button class="zoom-btn" id="zoomOut" title="Reducir tamaño">A−</button>
                 <button class="zoom-btn" id="zoomIn" title="Aumentar tamaño">A+</button>
@@ -625,7 +625,7 @@
         <!-- Login screen -->
         <div id="loginScreen" class="screen active">
             <div style="margin-top: 40px; text-align: center;">
-                <h3>Bienvenido a ChatApp</h3>
+                <h3>Bienvenido a ChatMe</h3>
                 <p>Inicia sesión o regístrate</p>
             </div>
             <div class="input-group"><input type="email" id="loginEmail" placeholder="Email" /></div>
@@ -890,7 +890,7 @@
                         await ensureUserInDatabase();
                         showScreen('users');
                         loadUsersList(); // También actualiza usersMap
-                        headerTitle.innerText = `ChatApp - ${user.displayName || user.email}`;
+                        headerTitle.innerText = `ChatMe - ${user.displayName || user.email}`;
                     } catch (e) {
                         console.error('Error en auth state:', e);
                         alert('Error al cargar usuario');
@@ -900,7 +900,7 @@
                 } else {
                     currentUser = null;
                     showScreen('login');
-                    headerTitle.innerText = 'ChatApp';
+                    headerTitle.innerText = 'ChatMe';
                     // Limpiar campos de login
                     document.getElementById('loginEmail').value = '';
                     document.getElementById('loginPassword').value = '';
@@ -1188,7 +1188,7 @@
 
             document.getElementById('backFromProfile').addEventListener('click', () => {
                 showScreen('users');
-                headerTitle.innerText = `ChatApp - ${currentUser?.displayName || currentUser?.email || ''}`;
+                headerTitle.innerText = `ChatMe - ${currentUser?.displayName || currentUser?.email || ''}`;
             });
 
             document.getElementById('updateNameBtn').addEventListener('click', async () => {
